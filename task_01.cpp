@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
 int findTreasure(vector<int>& rotatedArray, int treasure) {
     int left = 0, right = rotatedArray.size() - 1;
 
@@ -37,15 +36,15 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-
-    cin >> treasure;
+   
+     cin >> treasure;
 
     int index = findTreasure(arr, treasure);
-
+    
     if (index != -1)
         cout << index << endl;
     else
         cout << "Treasure not found" << endl;
-
+    
     return 0;
 }
