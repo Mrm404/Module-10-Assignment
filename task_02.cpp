@@ -32,17 +32,18 @@ void burgerFloor(vector<int>& rotatedMenu, int budget) {
     int res = max(floor1, floor2);
     int maxPrice = *max_element(rotatedMenu.begin(), rotatedMenu.end());
 
-   
     if (budget > maxPrice) {
         cout << "Customer is rich! Return " << maxPrice << " (the max price)." << endl;
     } else if (res == -1) {
         cout << "Customer is broke. Return -1." << endl;
     } else if (budget == res) {
-        cout << "Customer has $" << budget << ". Return " << res << "." << endl;
-    } else if (budget > res){ 
-        cout << "Customer has $" << budget << ". Return " << res
-             << " (the burger costing $" << res << ")." << endl;
-    }
+        if (res == maxPrice) {
+            cout << "Customer has $" << budget << ". Return " << res << "." << endl;
+        } else {
+            cout << "Customer has $" << budget << ". Return " << res
+                 << " (the burger costing $" << res << ")." << endl;
+        }
+    } 
 }
 
 int main() {
@@ -55,3 +56,4 @@ int main() {
 
     return 0;
 }
+
